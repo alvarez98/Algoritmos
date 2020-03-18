@@ -15,7 +15,6 @@
 const solution = (A) => {
     let noDuplicates = [...new Set(A)], solution 
     let positives = noDuplicates.filter(number => number > 0)
-    let organized = positives.sort((a, b) => a - b)
     for (i = 1; i < organized.length + 2; i++) {   
         if (!organized.includes(i)) {
             solution = i
