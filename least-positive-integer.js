@@ -12,19 +12,14 @@
  * each element of array A is an integer within the range [−1,000,000..1,000,000].
 **/
 
-const range = (start, stop, step) => Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + (i * step))
-
 const solution = (A) => {
-    let noDuplicates = [...new Set(A)], solution = 0
+    let noDuplicates = [...new Set(A)], solution 
     let positives = noDuplicates.filter(number => number > 0)
     let organized = positives.sort((a, b) => a - b)
-    const arrayRange = organized.length === 0 ? ( solution = 1 ) : range(0, organized.length + 1, 1)
-    if (solution === 0) {
-        for (i = 1; i < arrayRange.length; i++) {
-            if (!organized.includes(arrayRange[i])) {
-                solution = arrayRange[i]
-                break
-            }
+    for (i = 1; i < organized.length + 2; i++) {   
+        if (!organized.includes(i)) {
+            solution = i
+            break
         }
     }
     return solution
